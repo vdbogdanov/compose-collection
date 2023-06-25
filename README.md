@@ -3,12 +3,17 @@
 This repository contains Docker Compose files for deploy some services.
 
 ## Table of Contents
-- [openvpn](#openvpn)
-- [nginx](#nginx)
-- [cmdbuild](#cmdbuild)
-- [gitlab](#gitlab)
-- [pgadmin](#pgadmin)
-- [vcenter](#vcenter)
+
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Services](#services)
+	- [openvpn](#openvpn)
+	- [nginx](#nginx)
+	- [cmdbuild](#cmdbuild)
+	- [gitlab](#gitlab)
+	- [pgadmin](#pgadmin)
+	- [vcenter](#vcenter)
+
 
 ## Getting Started
 
