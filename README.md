@@ -1,6 +1,6 @@
 # compose-collection
 
-This repository contains Docker Compose files for deploy some services.
+This collection provides a set of services, where each service is located in a separate Compose file. Later, Compose files containing several services will appear here to deploy the working environment in one click.
 
 ## Table of Contents
 
