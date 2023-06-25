@@ -4,10 +4,10 @@ services:
     image: gitlab/gitlab-ce
     restart: always
     container_name: gitlab
-    hostname: gitlab.${DOMAIN}
+    hostname: gitlab.${GITLAB_DOMAIN}
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-        external_url 'http://gitlab.${DOMAIN}:80'
+        external_url 'http://gitlab.${GITLAB_DOMAIN}:80'
         gitlab_rails['gitlab_shell_ssh_port'] = 2224
     networks:
       - default

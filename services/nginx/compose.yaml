@@ -5,7 +5,7 @@ services:
     restart: always
     container_name: nginx
     environment:
-      - DOMAIN=${DOMAIN}
+      - DOMAIN=${NGINX_DOMAIN}
       - NGINX_ENVSUBST_OUTPUT_DIR=/etc/nginx
     networks:
       - default
