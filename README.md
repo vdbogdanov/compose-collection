@@ -85,7 +85,9 @@ Deploy CMDBuild base on `http://<server_ip>:80/cmdbuild` where `username = cmdbu
 
 ### [gitlab](services/gitlab/)
 
-Deploy Gitlab service on `http://<server_ip>:80` and `ssh_port = 2224` where `username = root`, for get `password` you should run this command in terminal:
+Deploy Gitlab service on `http://<server_ip>:80` and `ssh_port = 2224` where `username = root`.
+
+For get `password` you should run this command in terminal:
 
 ```
 docker exec -it gitlab grep 'Password:' /etc/gitlab/initial_root_password
