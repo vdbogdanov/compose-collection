@@ -45,7 +45,7 @@ docker compose up -d
 
 ## Services
 
-If you want use services with custom config, you should change .env file in folder with service.
+If you want use service with custom config, you should change .env file in folder with service.
 
 ### [openvpn](services/openvpn/)
 
