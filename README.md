@@ -31,7 +31,7 @@ Open folder with service:
 cd compose-collection/services/<service_folder>
 ```
 
-Configure service with .env file:
+Configure service with .env file (optional):
 
 ```
 nano .env
