@@ -27,8 +27,6 @@ services:
     container_name: cmdbuild_db
     environment:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-    networks:
-      - default
     expose:
       - "${POSTGRES_PORT}"
     volumes:

@@ -5,7 +5,5 @@ services:
     restart: always
     container_name: vcsim
     command: --vcenter --vm 20
-    networks:
-      - default
     ports:
       - "${VCENTER_PORT}:443"

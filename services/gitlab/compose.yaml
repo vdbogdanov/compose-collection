@@ -9,8 +9,6 @@ services:
       GITLAB_OMNIBUS_CONFIG: |
         external_url 'http://gitlab.${GITLAB_DOMAIN}:80'
         gitlab_rails['gitlab_shell_ssh_port'] = ${GITLAB_SSH_PORT}
-    networks:
-      - default
     ports:
       - "${GITLAB_PORT}:80"
       - "${GITLAB_SSH_PORT:22"

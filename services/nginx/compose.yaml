@@ -4,11 +4,10 @@ services:
     image: nginx
     restart: always
     container_name: nginx
+    network_mode: host
     environment:
       - DOMAIN=${NGINX_DOMAIN}
       - NGINX_ENVSUBST_OUTPUT_DIR=/etc/nginx
-    networks:
-      - default
     ports:
       - "${NGINX_HTTP_PORT}:80"
       - "${NGINX_HTTPS_PORT}:443"
