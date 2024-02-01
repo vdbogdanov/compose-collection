@@ -1,0 +1,48 @@
+version: '3.8'
+services:
+  marzban:
+    image: gozargah/marzban:latest
+    restart: always
+    container_name: marzban_vpn
+    env_file: .env
+    network_mode: host
+    expose:
+      - "8000"
+      - "8080"
+      - "8443"
+      - "2053"
+      - "2083"
+      - "1080"
+    volumes:
+      - ./data:/var/lib/marzban
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:latest
+    restart: always
+    container_name: marzban_db
+    env_file: .env
+    network_mode: host
+    command: --bind-address=127.0.0.1 --mysqlx-bind-address=127.0.0.1
+    environment:
+      MYSQL_DATABASE: marzban
+    expose:
+      - "33060"
+      - "3306"
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    restart: always
+    container_name: marzban_phpmyadmin
+    env_file: .env
+    network_mode: host
+    environment:
+      PMA_HOST: 127.0.0.1
+      APACHE_PORT: 8010
+    expose:
+      - "8010"
+    depends_on:
+      - mysql

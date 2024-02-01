@@ -6,4 +6,4 @@ services:
     container_name: vcsim
     command: --vcenter --vm 20
     ports:
-      - "${VCENTER_PORT}:443"
+      - "80:443"
