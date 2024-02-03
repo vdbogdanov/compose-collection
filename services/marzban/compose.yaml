@@ -7,12 +7,13 @@ services:
     env_file: .env
     network_mode: host
     expose:
-      - "8000"
-      - "8080"
-      - "8443"
-      - "2053"
-      - "2083"
-      - "1080"
+      - "8000/tcp"
+      - "8080/tcp"
+      - "8443/tcp"
+      - "2053/tcp"
+      - "2083/tcp"
+      - "1080/tcp"
+      - "1080/udp"
     volumes:
       - ./data:/var/lib/marzban
     depends_on:
