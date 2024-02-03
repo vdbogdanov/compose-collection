@@ -9,6 +9,7 @@ services:
     expose:
       - "8000/tcp"
       - "8080/tcp"
+      - "8081/tcp"
       - "8443/tcp"
       - "2053/tcp"
       - "2083/tcp"
