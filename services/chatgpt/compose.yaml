@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  chatgpt-next-web:
+    container_name: chatgpt-next-web
+    image: yidadaa/chatgpt-next-web
+    environment:
+      - OPENAI_API_KEY=<API_KEY>
+      - GOOGLE_API_KEY=<API_KEY>
+      - HIDE_USER_API_KEY=1
+      - DISABLE_GPT4=1
+      - ENABLE_BALANCE_QUERY=1
+    ports:
+      - "3000:3000"
