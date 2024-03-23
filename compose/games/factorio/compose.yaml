@@ -2,8 +2,8 @@ version: '2'
 services:
   factorio:
     image: factoriotools/factorio:1.1.101
-    restart: unless-stopped
     container_name: factorio
+    restart: unless-stopped
     ports:
      - "34197:34197/udp"
     expose:

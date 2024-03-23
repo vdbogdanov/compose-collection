@@ -2,6 +2,7 @@ version: '3'
 services:
   postgresql:
     image: postgres:16.2
+    container_name: confluence-server_db
     restart: always
     environment:
       - POSTGRES_DB=confluence
@@ -14,6 +15,7 @@ services:
 
   confluence-server:
     image: atlassian/confluence:8.8.0
+    container_name: confluence-server
     restart: always
     environment:
       - ATL_PROXY_NAME=wiki.vdbogdanov.ru
@@ -24,8 +26,8 @@ services:
       - ATL_JDBC_PASSWORD=confluence
       - ATL_DB_TYPE=postgresql
     ports:
-      - "127.0.0.1:8090:8090"
-      - "127.0.0.1:8091:8091"
+      - "8090:8090"
+      - "8091:8091"
     volumes:
       - ./data/config:/var/atlassian/application-data/confluence
     depends_on:

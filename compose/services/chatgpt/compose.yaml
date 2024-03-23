@@ -1,8 +1,9 @@
 version: '3.9'
 services:
   chatgpt-next-web:
-    container_name: chatgpt-next-web
     image: yidadaa/chatgpt-next-web
+    container_name: chatgpt-next-web
+    restart: always
     environment:
       - OPENAI_API_KEY=<API_KEY>
       - GOOGLE_API_KEY=<API_KEY>

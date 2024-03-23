@@ -1,9 +1,25 @@
 version: '3'
 services:
-  cmdbuild:
-    image: trepz/cmdbuild:3.1.1    
+  postgres:
+    image: mdillon/postgis:9.5-alpine    
+    container_name: cmdbuild_db
     restart: always
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    expose:
+      - "5432"
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  cmdbuild:
+    image: trepz/cmdbuild:3.1.1
     container_name: cmdbuild
+    restart: always
     environment:
       - DB_HOST=postgres
       - DB_PORT=5432
@@ -21,18 +37,3 @@ services:
       postgres:
         condition: service_healthy
 
-  postgres:
-    image: mdillon/postgis:9.5-alpine    
-    restart: always
-    container_name: cmdbuild_db
-    environment:
-      - POSTGRES_PASSWORD=postgres
-    expose:
-      - "5432"
-    volumes:
-      - ./data:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
-      interval: 10s
-      timeout: 5s
-      retries: 5

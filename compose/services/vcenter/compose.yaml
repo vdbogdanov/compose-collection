@@ -2,8 +2,8 @@ version: '3'
 services:
   vcsim:
     image: nimmis/vcsim
-    restart: always
     container_name: vcsim
+    restart: always
     command: --vcenter --vm 20
     ports:
-      - "80:443"
+      - "443:443"

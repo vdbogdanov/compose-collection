@@ -4,8 +4,8 @@ services:
     cap_add:
       - NET_ADMIN
     image: kylemanna/openvpn
-    restart: always
     container_name: openvpn
+    restart: always
     ports:
       - "1194:1194/udp"
     volumes:
