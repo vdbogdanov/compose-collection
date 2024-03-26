@@ -1,4 +1,4 @@
-FROM golang:latest
+FROM golang:1.22.1
 COPY govc-recordings /opt/vcsim_data/
 RUN go install github.com/vmware/govmomi/vcsim@latest
 RUN go install github.com/vmware/govmomi/govc@latest
